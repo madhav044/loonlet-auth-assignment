@@ -45,38 +45,31 @@ FastAPI's native `Depends` system handles access guardrails globally:
 ### 6. Relational Object Mapping (ORM)
 * **SQLAlchemy Abstraction Layer:** Maps Python classes directly to database schemas, providing type safety, data integrity, and automatic SQL injection defense via built-in query parameterization.
 
----
-
-##  Local Installation & Setup
-
-### **Step 1:** Clone the Project Repository
-```bash
-git clone [https://github.com/madhav044/loonlet-auth-assignment.git](https://github.com/madhav044/loonlet-auth-assignment.git)
-cd loonlet-auth-assignment
-
 Step 2: Initialize and Activate the Virtual Environment
 On Windows:
 
-Bash
-  python -m venv venv
-  venv\Scripts\activate
+python -m venv venv
+venv\Scripts\activate
+
 On macOS / Linux:
 
-Bash
-  python -m venv venv
-  source venv/bin/activate
+python -m venv venv
+source venv/bin/activate
+
 Step 3: Install Dependencies
-Bash
+
 pip install -r requirements.txt
+
 Step 4: Spin Up the Development Server
-Bash
+
 python -m uvicorn app.main:app --reload
+
 Local Server Link: http://127.0.0.1:8000/
 
 Interactive Swagger Documentation: http://127.0.0.1:8000/docs
 
-🔌 API Blueprint & Endpoints
-🔓 Public Endpoints
+API Blueprint & Endpoints
+Public Endpoints
 User Registration
 
 Route: POST /register
@@ -91,14 +84,14 @@ Payload Parameters: Email, Password
 
 API Response: Bearer JWT Access Token, User Role
 
-🔒 Protected Endpoints (RBAC Enforced)
+Protected Endpoints (RBAC Enforced)
 Admin Portal (GET / POST endpoints) → Accessible exclusively by verified Admin roles. (e.g., View all registered users).
 
 Therapist Portal (GET / POST endpoints) → Accessible exclusively by verified Therapist roles.
 
 Parent Portal (GET / POST endpoints) → Accessible exclusively by verified Parent roles.
 
-🗄️ Database Entity Schema (SQLite)
+Database Entity Schema (SQLite)
 The core User model tracks the following relational data properties:
 
 ID: Integer (Primary Key, Auto-Increment)
@@ -111,12 +104,13 @@ Password: String (Securely Salted Cryptographic Hash)
 
 Role: String (Defines RBAC mapping permissions)
 
-📂 Source Code Repository
+Source Code Repository
 GitHub Link: https://github.com/madhav044/loonlet-auth-assignment
 
-👤 Developer Profile
+Developer Profile
 Author: Madhav Chand
 
 Email Contact: 2200032610cseh@gmail.com
 
 Phone Contact: 8074271778
+
