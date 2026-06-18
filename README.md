@@ -1,10 +1,10 @@
-# 🚀 Loonlet Auth Assessment
+#  Loonlet Auth Assessment
 
 A robust, production-ready **FastAPI** authentication backend featuring **JWT Stateless Authentication** and **Role-Based Access Control (RBAC)**. This project was built as part of the technical assessment for Loonlet Innovations Pvt. Ltd.
 
 ---
 
-## 🛠️ Tech Stack & Key Frameworks
+##  Tech Stack & Key Frameworks
 
 * **Core Framework:** `FastAPI` (Python)
 * **Asynchronous Server:** `Uvicorn`
@@ -15,7 +15,7 @@ A robust, production-ready **FastAPI** authentication backend featuring **JWT St
 
 ---
 
-## 📌 Core Architecture & Theoretical Concepts
+##  Core Architecture & Theoretical Concepts
 
 ### 1. RESTful API Architecture
 * **Statelessness:** The API does not persist client session states on the server. Every incoming request must contain all the credentials necessary to authenticate itself, ensuring the backend can scale horizontally.
@@ -47,9 +47,76 @@ FastAPI's native `Depends` system handles access guardrails globally:
 
 ---
 
-## ⚙️ Local Installation & Setup
+##  Local Installation & Setup
 
 ### **Step 1:** Clone the Project Repository
 ```bash
 git clone [https://github.com/madhav044/loonlet-auth-assignment.git](https://github.com/madhav044/loonlet-auth-assignment.git)
 cd loonlet-auth-assignment
+
+Step 2: Initialize and Activate the Virtual Environment
+On Windows:
+
+Bash
+  python -m venv venv
+  venv\Scripts\activate
+On macOS / Linux:
+
+Bash
+  python -m venv venv
+  source venv/bin/activate
+Step 3: Install Dependencies
+Bash
+pip install -r requirements.txt
+Step 4: Spin Up the Development Server
+Bash
+python -m uvicorn app.main:app --reload
+Local Server Link: http://127.0.0.1:8000/
+
+Interactive Swagger Documentation: http://127.0.0.1:8000/docs
+
+🔌 API Blueprint & Endpoints
+🔓 Public Endpoints
+User Registration
+
+Route: POST /register
+
+Payload Parameters: Name, Email, Password, Role (Admin | Therapist | Parent)
+
+User Authentication (Login)
+
+Route: POST /login
+
+Payload Parameters: Email, Password
+
+API Response: Bearer JWT Access Token, User Role
+
+🔒 Protected Endpoints (RBAC Enforced)
+Admin Portal (GET / POST endpoints) → Accessible exclusively by verified Admin roles. (e.g., View all registered users).
+
+Therapist Portal (GET / POST endpoints) → Accessible exclusively by verified Therapist roles.
+
+Parent Portal (GET / POST endpoints) → Accessible exclusively by verified Parent roles.
+
+🗄️ Database Entity Schema (SQLite)
+The core User model tracks the following relational data properties:
+
+ID: Integer (Primary Key, Auto-Increment)
+
+Name: String (User Identification)
+
+Email: String (Unique Constraint, Index)
+
+Password: String (Securely Salted Cryptographic Hash)
+
+Role: String (Defines RBAC mapping permissions)
+
+📂 Source Code Repository
+GitHub Link: https://github.com/madhav044/loonlet-auth-assignment
+
+👤 Developer Profile
+Author: Madhav Chand
+
+Email Contact: 2200032610cseh@gmail.com
+
+Phone Contact: 8074271778
