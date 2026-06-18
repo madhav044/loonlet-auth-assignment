@@ -294,4 +294,4 @@ Authorization: Bearer <your_access_token>
 |---|---|
 | Developer | Madhav Chand Nakka |
 | Email | 2200032610cseh@gmail.com |
-| GitHub | [@madhav044](GitHub Project Link: https://github.com/madhav044/loonlet-auth-assignment) |
+| GitHub Repository| (GitHub Project Link: https://github.com/madhav044/loonlet-auth-assignment) |
